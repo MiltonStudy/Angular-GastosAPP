@@ -1,0 +1,50 @@
+<div class="d-grid gap-2 d-md-block m-3">
+
+    <h3>Gastos</h3>
+
+    <form>
+        <div class="form-group row">
+            <label for="select-categoria" class="col-sm-2 col-form-label">Categoria</label>
+            <div class="col-sm-10">
+                <select id="select-categoria" class="form-control">
+                    <option selected>Seleccione una Categoria</option>
+                    <option>...</option>
+                </select>
+            </div>
+        </div> <br>
+
+        <div class="form-group row">
+            <label for="txt-nombre-gasto" class="col-sm-2 col-form-label">Gasto/Concepto</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txt-nombre-gasto" placeholder="Gasto/Concepto">
+            </div>
+        </div> <br>
+
+        <div class="form-group row">
+            <label for="txt-valor" class="col-sm-2 col-form-label">Valor</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="txt-nombre-valor" placeholder="Valor">
+            </div>
+        </div> <br>
+
+        <div class="form-group row">
+            <label for="txt-fecha-registro" class="col-sm-2 col-form-label">Fecha de Registro</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="txt-fecha-registro" placeholder="Fecha de Registro">
+            </div>
+        </div> <br>
+
+        <div class="form-group">
+            <label for="txt-factura" class="col-sm-2 col-form-label">Factura/Comprobante</label>
+            <button id="txt-factura" type="button" (click)="takePicture()">Seleccionar Foto</button>
+            <p>{{ imageURL }}</p>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <a type="submit" class="btn btn-secondary" style="margin-right: 5px;" routerLink="/gastos">
+                Volver
+            </a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
