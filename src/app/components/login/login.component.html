@@ -1,0 +1,25 @@
+<div style=" display: flex; justify-content: center;">
+    <div class="col-md-4">
+
+        <br>
+        <h3 class="text-center">Iniciar Sesión</h3>
+
+        <form>
+            <div class="form-outline mb-4">
+                <input type="email" id="correo" formControlName="correo" class="form-control">
+                <label class="form-label" for="correo">Correo Electronico</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="password" id="contrasena" formControlName="contrasena" class="form-control">
+                <label class="form-label" for="contrasena">Contraseña</label>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="Iniciar Sesión">
+
+            <div class="text-center">
+                <p>¿No estas registrado? <a routerLink="/crear-usuario">Registrame</a></p>
+            </div>
+        </form>
+    </div>
+</div>

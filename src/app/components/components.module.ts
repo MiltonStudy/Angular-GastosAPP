@@ -8,6 +8,8 @@ import { GastosComponent } from './gastos/gastos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { FormGastosComponent } from './form-gastos/form-gastos.component';
 import { FormCategoriasComponent } from './form-categorias/form-categorias.component';
+import { FormCrearUsuarioComponent } from './form-crear-usuario/form-crear-usuario.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormCategoriasComponent } from './form-categorias/form-categorias.compo
     GastosComponent,
     CategoriasComponent,
     FormGastosComponent,
-    FormCategoriasComponent
+    FormCategoriasComponent,
+    FormCrearUsuarioComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +34,9 @@ import { FormCategoriasComponent } from './form-categorias/form-categorias.compo
     GastosComponent,
     CategoriasComponent,
     FormGastosComponent,
-    FormCategoriasComponent
+    FormCategoriasComponent,
+    FormCrearUsuarioComponent,
+    LoginComponent
   ]
 })
 export class ComponentsModule { }

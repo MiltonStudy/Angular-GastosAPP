@@ -5,6 +5,8 @@ import { GastosComponent } from './components/gastos/gastos.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { FormGastosComponent } from './components/form-gastos/form-gastos.component';
 import { FormCategoriasComponent } from './components/form-categorias/form-categorias.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormCrearUsuarioComponent } from './components/form-crear-usuario/form-crear-usuario.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'form-categorias',
     component: FormCategoriasComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'crear-usuario',
+    component: FormCrearUsuarioComponent
   },
   {
     path: '**',
