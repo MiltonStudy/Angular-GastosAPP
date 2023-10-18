@@ -10,6 +10,7 @@ import { FormGastosComponent } from './form-gastos/form-gastos.component';
 import { FormCategoriasComponent } from './form-categorias/form-categorias.component';
 import { FormCrearUsuarioComponent } from './form-crear-usuario/form-crear-usuario.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
   ],
   exports: [
     InicioComponent,
