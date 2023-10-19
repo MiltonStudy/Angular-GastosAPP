@@ -26,6 +26,10 @@ const routes: Routes = [
     component: FormGastosComponent
   },
   {
+    path: 'form-categorias/:id',
+    component: FormCategoriasComponent
+  },
+  {
     path: 'form-categorias',
     component: FormCategoriasComponent
   },

@@ -1,28 +1,29 @@
 <div class="d-grid gap-2 d-md-block m-3">
 
-    <h3>Categorias</h3>
+  <h3>Categorias</h3>
 
-    <form>
-        <div class="form-group row">
-          <label for="txt-nombre-categoria" class="col-sm-2 col-form-label">Nombre Categoria</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="txt-nombre-categoria" placeholder="Nombre Categoria">
-          </div>
-        </div> <br>
-        
-        <div class="form-group row">
-            <label for="txt-fecha-creacion" class="col-sm-2 col-form-label">Fecha de Creación</label>
-            <div class="col-sm-10">
-              <input type="date" class="form-control" id="txt-fecha-creacion" placeholder="Fecha de Creación">
-            </div>
-          </div>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="txt-nombre-categoria" class="col-sm-2 col-form-label">Nombre Categoria</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="txtNombreCategoria" formControlName="txtNombreCategoria"
+          placeholder="Nombre Categoria">
+      </div>
+    </div> <br>
 
-        <div style="margin-top: 15px;">
-            <a type="submit" class="btn btn-secondary" style="margin-right: 5px;"
-            routerLink="/categorias">
-                Volver
-            </a>
-            <button class="btn btn-primary" (click)="crearCategoria()">Guardar</button>
-        </div>
-      </form>
+    <div class="form-group row">
+      <label for="txt-fecha-creacion" class="col-sm-2 col-form-label">Fecha de Creación</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="txtFechaCreacion" formControlName="txtFechaCreacion"
+          placeholder="Fecha de Creación">
+      </div>
+    </div>
+
+    <div style="margin-top: 15px;">
+      <a type="submit" class="btn btn-secondary" style="margin-right: 5px;" routerLink="/categorias">
+        Volver
+      </a>
+      <input type="submit" value="Guardar" class="btn btn-primary">
+    </div>
+  </form>
 </div>

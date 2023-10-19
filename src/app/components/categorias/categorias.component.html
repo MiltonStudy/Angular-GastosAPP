@@ -11,13 +11,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let categoria of categorias">
-        <td>{{ categoria.categoria }}</td>
-        <td>{{ categoria.fechaCreacion }}</td>
+        <td>{{ categoria.nombre_categoria }}</td>
+        <td>{{ categoria.fecha_creacion }}</td>
         <td class="text-center">
-          <a class="btn btn-primary m-1" routerLink="/form-categorias">
+          <a class="btn btn-primary m-1" [routerLink]="['/form-categorias/', categoria.id!]">
             <i class="bi bi-pencil-square"></i>
           </a>
-          <a class="btn btn-primary" href="">
+          <a (click)="eliminarCategoria(categoria.id!)" class="btn btn-danger">
             <i class="bi bi-trash 3"></i>
           </a>
         </td>

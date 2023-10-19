@@ -1,16 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CategoriaService } from '../../service/categoria.service';
+import { ICategoria } from '../../interfaces/ICategoria';
 
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
   styleUrls: ['./categorias.component.css'],
 })
-export class CategoriasComponent {
-  categorias: any = [
-    { categoria: 'Servicios Publicos', fechaCreacion: '2023-02-14' },
-    { categoria: 'Comidas', fechaCreacion: '2023-09-12' },
-    { categoria: 'Fiestas', fechaCreacion: '2023-10-01' },
-    { categoria: 'Combustible', fechaCreacion: '2023-10-03' },
-    { categoria: 'Suscripciones', fechaCreacion: '2023-04-12' },
-  ];
+export class CategoriasComponent implements OnInit {
+  categorias: ICategoria[] = [];
+
+  constructor(private categoriaService: CategoriaService) {
+    this.categorias = [
+      {
+        fecha_creacion: 'Cargando..',
+        nombre_categoria: 'Cargando..',
+      },
+    ];
+  }
+
+  ngOnInit(): void {
+    this.categoriaService.obtenerCategorias().subscribe((cats) => {
+      this.categorias = [];
+      cats.forEach((catElement: any) => {
+        this.categorias.push({
+          id: catElement.id,
+          fecha_creacion: catElement.txtFechaCreacion,
+          nombre_categoria: catElement.txtNombreCategoria,
+        });
+      });
+    });
+  }
+
+  eliminarCategoria(id: string) {
+    this.categoriaService
+      .eliminarCategoria(id)
+      .then(() => {
+        console.log('sucess');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 }
