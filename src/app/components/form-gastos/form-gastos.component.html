@@ -2,42 +2,45 @@
 
     <h3>Gastos</h3>
 
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-group row">
-            <label for="select-categoria" class="col-sm-2 col-form-label">Categoria</label>
+            <label for="categoria" class="col-sm-2 col-form-label">Categoria</label>
             <div class="col-sm-10">
-                <select id="select-categoria" class="form-control">
-                    <option selected>Seleccione una Categoria</option>
-                    <option>...</option>
+                <select id="categoria" formControlName="categoria" class="form-control">
+                    <option *ngFor="let categoria of categorias" [ngValue]="categoria.id!">
+                        {{ categoria.nombre_categoria }}
+                    </option>
                 </select>
             </div>
         </div> <br>
 
         <div class="form-group row">
-            <label for="txt-nombre-gasto" class="col-sm-2 col-form-label">Gasto/Concepto</label>
+            <label for="concepto" class="col-sm-2 col-form-label">Gasto/Concepto</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="txt-nombre-gasto" placeholder="Gasto/Concepto">
+                <input type="text" class="form-control" id="concepto" formControlName="concepto"
+                    placeholder="Gasto/Concepto">
             </div>
         </div> <br>
 
         <div class="form-group row">
-            <label for="txt-valor" class="col-sm-2 col-form-label">Valor</label>
+            <label for="valor" class="col-sm-2 col-form-label">Valor</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="txt-nombre-valor" placeholder="Valor">
+                <input type="number" class="form-control" id="valor" formControlName="valor" placeholder="Valor">
             </div>
         </div> <br>
 
         <div class="form-group row">
-            <label for="txt-fecha-registro" class="col-sm-2 col-form-label">Fecha de Registro</label>
+            <label for="fechaRegistro" class="col-sm-2 col-form-label">Fecha de Registro</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="txt-fecha-registro" placeholder="Fecha de Registro">
+                <input type="date" class="form-control" id="fechaRegistro" formControlName="fechaRegistro"
+                    placeholder="Fecha de Registro">
             </div>
         </div> <br>
 
         <div class="form-group">
-            <label for="txt-factura" class="col-sm-2 col-form-label">Factura/Comprobante</label>
-            <button id="txt-factura" type="button" (click)="takePicture()">Seleccionar Foto</button>
-            <p>{{ imageURL }}</p>
+            <label for="" class="col-sm-2 col-form-label">Factura/Comprobante</label>
+            <button id="" type="button" (click)="takePicture()">Seleccionar Foto</button>
+            <input type="hidden" class="form-control" id="factura" formControlName="factura" value="{{ imageURL }}">
         </div>
 
         <div style="margin-top: 15px;">

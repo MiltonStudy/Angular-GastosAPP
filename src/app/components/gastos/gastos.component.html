@@ -4,7 +4,6 @@
   <table class="table table-hover ">
     <thead>
       <tr>
-        <th scope="col">Categoria</th>
         <th scope="col">Gasto/Concepto</th>
         <th scope="col">Valor</th>
         <th>Fecha de Registro</th>
@@ -13,19 +12,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let gasto of gastos">
-        <td>{{ gasto.categoria }}</td>
         <td>{{ gasto.concepto }}</td>
         <td>{{ gasto.valor }}</td>
         <td>{{ gasto.fechaRegistro }}</td>
         <td class="text-center">
-          <a class="btn btn-primary m-1" title="Ver Factura" target="_blank"
-          href="{{ gasto.factura }}">
+          <a class="btn btn-primary m-1" title="Ver Factura" target="_blank" href="{{ gasto.factura }}">
             <i class="bi bi-file-earmark-text-fill"></i>
           </a>
-          <a class="btn btn-primary m-1" routerLink="/form-gastos">
+          <a class="btn btn-primary m-1" [routerLink]="['/form-gastos', gasto.id!]">
             <i class="bi bi-pencil-square"></i>
           </a>
-          <a class="btn btn-primary" href="">
+          <a (click)="eliminarGasto(gasto.id!)" class="btn btn-danger">
             <i class="bi bi-trash3"></i>
           </a>
         </td>
